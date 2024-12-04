@@ -1,11 +1,11 @@
 {
-  "homepage": "https://Pappuuu1999.githun.io/portfolio1",
-  "name": "protfilio",
+  "homepage": "https://Pappuuu1999.githun.io/Portfolio",
+  "name": "Portfolio",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "predeploy":"num run dev",
+    "predeploy":"npm run dev",
     "deploy":"gh-pages -d build",
     "dev": "vite",
     "build": "vite build",
