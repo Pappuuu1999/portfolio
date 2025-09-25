@@ -62,21 +62,19 @@ const Hero = () => {
     };
   }
   return (
-    <div className='hero'>
+    <div id="home" className='hero'>
       <img src={profile_img} alt="" />
       <h1><span>I'm Usama Ali Khan</span><br />        <div className='console-container'>
           <span id='text'></span>
           <div className='console-underscore' id='console'>&#95;</div>
         </div></h1>
       <p>I am a web developer from Islamabad, Pakistan wiht 2 years of experience</p>
-      <fiv className="hero-action">
-        <div className="hero-connect">
-            Connect with me
-        </div>
+      <div className="hero-action">
+        <a className="hero-connect" href="#contact">Connect with me</a>
         <div className='hero-resume'>
             My resume
         </div>
-      </fiv>
+      </div>
     </div>
   )
 }

@@ -33,11 +33,15 @@
 .mywork-container img
 {
     box-sizing: border-box;
+    border-radius: 50px;
     width: 350px;
-    height: 300px;
+    height: 250px;
+    object-fit: cover;
+    display: block;
     transition: 0.3s;
     cursor: pointer;
 }
+.mywork-container a { display: inline-block; }
 .mywork-container img:hover
 {
     transform: scale(1.12);

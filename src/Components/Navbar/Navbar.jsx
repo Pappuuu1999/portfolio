@@ -8,18 +8,43 @@ const Navbar = () => {
   return (
     <div>
       <div className='navbar'>
-      <img src={logo} alt="" />
-      <ul className="nav-menu">
-        <li><p onClick={()=>setMenu("home")}>Home</p>{menu==="home"?<img src={underline}/>:<></>}</li>
-        <li><p  onClick={()=>setMenu("about")}>About Me</p>{menu==="about"?<img src={underline}/>:<></>}</li>
-        <li><p  onClick={()=>setMenu("services")}>Services</p>{menu==="services"?<img src={underline}/>:<></>}</li>
-        <li><p  onClick={()=>setMenu("portfolio")}>Portfolio</p>{menu==="portfolio"?<img src={underline}/>:<></>}</li>
-        <li><p  onClick={()=>setMenu("contact")}>Contact</p>{menu==="contact"?<img src={underline}/>:<></>}</li>
-      </ul>
-      <div className="nav-connect">
-        Connect With Me
+        <img src={logo} alt="" />
+        <ul className="nav-menu">
+          <li>
+            <a href="#home" onClick={() => setMenu("home")}>
+              Home
+            </a>
+            {menu === "home" ? <img src={underline} alt="" /> : <></>}
+          </li>
+          <li>
+            <a href="#about" onClick={() => setMenu("about")}>
+              About Me
+            </a>
+            {menu === "about" ? <img src={underline} alt="" /> : <></>}
+          </li>
+          <li>
+            <a href="#services" onClick={() => setMenu("services")}>
+              Services
+            </a>
+            {menu === "services" ? <img src={underline} alt="" /> : <></>}
+          </li>
+          <li>
+            <a href="#portfolio" onClick={() => setMenu("portfolio")}>
+              Portfolio
+            </a>
+            {menu === "portfolio" ? <img src={underline} alt="" /> : <></>}
+          </li>
+          <li>
+            <a href="#contact" onClick={() => setMenu("contact")}>
+              Contact
+            </a>
+            {menu === "contact" ? <img src={underline} alt="" /> : <></>}
+          </li>
+        </ul>
+        <div className="nav-connect">
+          Connect With Me
+        </div>
       </div>
-    </div>
     </div>
   )
 }
