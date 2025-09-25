@@ -68,7 +68,7 @@ const Hero = () => {
           <span id='text'></span>
           <div className='console-underscore' id='console'>&#95;</div>
         </div></h1>
-      <p>I am a web developer from Islamabad, Pakistan wiht 2 years of experience</p>
+      <p>I am a web developer from Islamabad, Pakistan with 2 years of experience</p>
       <div className="hero-action">
         <a className="hero-connect" href="#contact">Connect with me</a>
         <div className='hero-resume'>

@@ -48,6 +48,8 @@
     border-radius: 50px;
     background: linear-gradient(267deg, #DA7C25 -5.09%, #B923E1 106.2%);
     cursor: pointer;
+    color: white;
+    text-decoration: none;
 }
 .hero-resume
 {
