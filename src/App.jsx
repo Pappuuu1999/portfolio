@@ -13,10 +13,10 @@ const App = () => {
   return (
     <Router>
       <div>
+        <Navbar/>
         <Routes>
           <Route path="/" element={
             <>
-              <Navbar/>
               <Hero/>
               <About/>
               <Services/>
@@ -27,11 +27,11 @@ const App = () => {
           } />
           <Route path="/work/:category" element={
             <>
-              <Navbar/>
               <WorkDetail/>
               <Footer/>
             </>
           } />
+          <Route path="/workdetail" element={<WorkDetail />} />
         </Routes>
       </div>
     </Router>

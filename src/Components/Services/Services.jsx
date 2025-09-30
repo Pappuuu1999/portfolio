@@ -5,48 +5,38 @@ import Services_Data from '../../assets/services_data';
 import arrow_icon from '../../assets/arrow_icon.svg';
 
 const Services = () => {
-  // Create category mapping for navigation
-  const categoryMap = {
-    "Web design": "web-design",
-    "Graphics design": "graphics-design", 
-    "Social media": "social-media",
-    "App design": "app-design",
-    "Digital marketing": "digital-marketing",
-    "Content writing": "content-writing"
-  }
+  const handleClick = (service) => {
+    // Redirect to the workdetail page with the service ID
+    window.location.href = `/workdetail?id=${service.s_no}`;
+  };
 
   return (
-    <section id="services" className='services'>
+    <div id="services" className='services'>
       <div className="services-title">
         <h1>My Services</h1>
-        <img src={theme_Pattern} alt="decorative pattern" />
+        <img src={theme_Pattern} alt="" />
       </div>
       <div className="services-container">
-        {Services_Data.map((service) => {
-            const category = categoryMap[service.s_name] || service.s_name.toLowerCase().replace(/\s+/g,'-');
-            const href = `/work/${category}`;
-            return (
-              <a
-                key={service.s_no || service.s_name}
-                href={href}
-                className='services-format-link'
-                aria-label={`View ${service.s_name} work`}
-              >
-                <article className='services-format' role="article">
-                    <h3>{service.s_no}</h3>
-                    <h2>{service.s_name}</h2>
-                    <p>{service.s_desc}</p>
-                    <div className='services-readmore'>
-                        <p>Read More</p>
-                        <img src={arrow_icon} alt="" aria-hidden="true" />
-                    </div>
-                </article>
-              </a>
-            )
-        })}
+        {Services_Data.map((service, index) => (
+          <div
+            key={index}
+            className='services-format-link'
+            onClick={() => handleClick(service)}
+          >
+            <div className='services-format'>
+              <h3>{service.s_no}</h3>
+              <h2>{service.s_name}</h2>
+              <p>{service.s_desc}</p>
+              <div className='services-readmore'>
+                <p>Read More</p>
+                <img src={arrow_icon} alt="" />
+              </div>
+            </div>
+          </div>
+        ))}
       </div>
-    </section>
-  )
-}
+    </div>
+  );
+};
 
-export default Services
+export default Services;

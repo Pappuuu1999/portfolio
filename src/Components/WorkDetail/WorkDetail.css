@@ -1,301 +1,174 @@
 .work-detail {
-  padding: 80px 10% 50px;
+  margin-top: 2%;
+  background: #0d0d0d;
+  color: #f5f5f5;
+  padding: 4rem 2rem;
   min-height: 100vh;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
+/* Header */
 .work-detail-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 50px;
+  text-align: center;
+  margin-bottom: 2rem;
 }
 
-.work-detail-title {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-}
-
-.work-detail-title h1 {
+.work-detail-header h1 {
   font-size: 3rem;
-  font-weight: 700;
-  margin: 0;
-  background: linear-gradient(45deg, #fff, #f0f0f0);
+  font-weight: 800;
+  background: linear-gradient(90deg, #a855f7, #f97316);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  background-clip: text;
+  letter-spacing: 1px;
 }
 
-.work-detail-title img {
-  width: 50px;
-  opacity: 0.8;
-}
-
-.back-link {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  color: white;
-  text-decoration: none;
-  font-size: 1.1rem;
-  font-weight: 500;
-  padding: 12px 24px;
-  border: 2px solid rgba(255, 255, 255, 0.3);
-  border-radius: 25px;
-  transition: all 0.3s ease;
-}
-
-.back-link:hover {
-  background: rgba(255, 255, 255, 0.1);
-  border-color: rgba(255, 255, 255, 0.6);
-  transform: translateX(-5px);
-}
-
-.work-detail-content {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.work-detail-hero {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 50px;
-  margin-bottom: 60px;
-  align-items: center;
-}
-
-.work-detail-image img {
+/* Image */
+.work-detail-image {
+  margin-top: 1.5rem;
   width: 100%;
+  max-width: 900px;
   border-radius: 20px;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-  transition: transform 0.3s ease;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+  object-fit: cover;
 }
 
-.work-detail-image img:hover {
-  transform: scale(1.02);
+/* Content Box */
+.work-detail-content {
+  width: 100%;
+  max-width: 950px;
+  margin: 2.5rem auto;
+  padding: 2.5rem;
+  background: #1a1a1a;
+  border-radius: 24px;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.6);
 }
 
-.work-detail-info h2 {
-  font-size: 2.5rem;
-  margin-bottom: 20px;
-  color: #fff;
-}
-
-.work-detail-info p {
-  font-size: 1.2rem;
+/* Description */
+.work-description {
+  font-size: 1.15rem;
+  color: #d1d1d1;
   line-height: 1.8;
-  margin-bottom: 30px;
-  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 2.5rem;
+  text-align: center;
 }
 
-.work-detail-number {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 80px;
-  height: 80px;
-  background: rgba(255, 255, 255, 0.2);
-  border-radius: 50%;
-  font-size: 2rem;
+/* Section Headings */
+.work-features h3,
+.work-technologies h3,
+.work-projects h3 {
+  font-size: 1.5rem;
   font-weight: 700;
-  border: 2px solid rgba(255, 255, 255, 0.3);
-}
-
-.work-detail-features,
-.work-detail-technologies,
-.work-detail-projects,
-.work-detail-cta {
-  margin-bottom: 60px;
-}
-
-.work-detail-features h3,
-.work-detail-technologies h3,
-.work-detail-projects h3,
-.work-detail-cta h3 {
-  font-size: 2rem;
-  margin-bottom: 30px;
+  margin-bottom: 1.2rem;
   color: #fff;
+  border-left: 5px solid #a855f7;
+  padding-left: 12px;
+  letter-spacing: 0.5px;
 }
 
-.features-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
+/* Features List */
+.work-features ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 2.2rem 0;
 }
 
-.feature-item {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  padding: 20px;
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 15px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  transition: all 0.3s ease;
+.work-features ul li {
+  background: #262626;
+  padding: 0.9rem 1.2rem;
+  margin-bottom: 0.8rem;
+  border-radius: 12px;
+  color: #e5e5e5;
+  font-size: 1rem;
+  transition: all 0.25s ease;
 }
 
-.feature-item:hover {
-  background: rgba(255, 255, 255, 0.15);
-  transform: translateY(-5px);
+.work-features ul li:hover {
+  transform: translateX(8px);
+  background: #333;
 }
 
-.feature-icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 30px;
-  height: 30px;
-  background: #4CAF50;
-  border-radius: 50%;
-  color: white;
-  font-weight: bold;
-  font-size: 1.2rem;
-}
-
-.technologies-list {
+/* Technologies */
+.tech-tags {
   display: flex;
   flex-wrap: wrap;
-  gap: 15px;
+  gap: 0.8rem;
+  margin-bottom: 2.2rem;
 }
 
 .tech-tag {
-  padding: 10px 20px;
-  background: rgba(255, 255, 255, 0.2);
-  border-radius: 25px;
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  font-size: 0.9rem;
-  font-weight: 500;
-  transition: all 0.3s ease;
+  background: linear-gradient(90deg, #a855f7, #f97316);
+  padding: 0.5rem 1.1rem;
+  border-radius: 24px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #fff;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+  transition: transform 0.2s ease;
 }
 
 .tech-tag:hover {
-  background: rgba(255, 255, 255, 0.3);
-  transform: translateY(-2px);
+  transform: scale(1.05);
 }
 
+/* Related Projects */
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.8rem;
+  margin-top: 1.8rem;
 }
 
 .project-item {
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 20px;
-  overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  transition: all 0.3s ease;
+  background: #1f1f1f;
+  padding: 1.2rem;
+  border-radius: 18px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .project-item:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  transform: translateY(-8px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
 }
 
 .project-item img {
   width: 100%;
-  height: 200px;
+  border-radius: 14px;
+  margin-bottom: 1rem;
+  height: 160px;
   object-fit: cover;
 }
 
 .project-item h4 {
-  padding: 20px;
-  margin: 0;
-  font-size: 1.3rem;
+  font-size: 1.15rem;
   color: #fff;
+  margin-bottom: 0.7rem;
+  font-weight: 600;
 }
 
-.project-link {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  padding: 15px 20px;
-  color: #fff;
-  text-decoration: none;
-  font-weight: 500;
-  border-top: 1px solid rgba(255, 255, 255, 0.2);
-  transition: all 0.3s ease;
-}
-
-.project-link:hover {
-  background: rgba(255, 255, 255, 0.1);
-}
-
-.work-detail-cta {
-  text-align: center;
-  padding: 50px;
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 20px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-.work-detail-cta h3 {
-  font-size: 2.5rem;
-  margin-bottom: 20px;
-}
-
-.work-detail-cta p {
-  font-size: 1.2rem;
-  margin-bottom: 30px;
-  color: rgba(255, 255, 255, 0.9);
-}
-
-.cta-button {
+.project-item a {
   display: inline-flex;
   align-items: center;
-  gap: 15px;
-  padding: 18px 36px;
-  background: linear-gradient(45deg, #FF6B6B, #FF8E53);
-  color: white;
+  gap: 8px;
   text-decoration: none;
-  font-size: 1.1rem;
   font-weight: 600;
-  border-radius: 30px;
-  transition: all 0.3s ease;
-  box-shadow: 0 10px 30px rgba(255, 107, 107, 0.3);
+  padding: 0.6rem 1.2rem;
+  border-radius: 32px;
+  font-size: 0.95rem;
+  background: linear-gradient(90deg, #a855f7, #f97316);
+  color: #fff;
+  transition: all 0.25s ease-in-out;
 }
 
-.cta-button:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 15px 40px rgba(255, 107, 107, 0.4);
+.project-item a:hover {
+  opacity: 0.9;
+  transform: scale(1.05);
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-  .work-detail {
-    padding: 60px 5% 30px;
-  }
-  
-  .work-detail-header {
-    flex-direction: column;
-    gap: 20px;
-    text-align: center;
-  }
-  
-  .work-detail-title h1 {
-    font-size: 2rem;
-  }
-  
-  .work-detail-hero {
-    grid-template-columns: 1fr;
-    gap: 30px;
-  }
-  
-  .work-detail-info h2 {
-    font-size: 2rem;
-  }
-  
-  .features-grid {
-    grid-template-columns: 1fr;
-  }
-  
-  .projects-grid {
-    grid-template-columns: 1fr;
-  }
-  
-  .work-detail-cta h3 {
-    font-size: 2rem;
-  }
+.project-item a img {
+  width: 16px;
+  height: 16px;
 }

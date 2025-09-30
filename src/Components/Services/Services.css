@@ -4,8 +4,9 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 48px;
-    margin: 48px 12px;
+    gap: 56px; /* slightly reduced for balance */
+    margin: 56px 16px;
+    
 }
 .services-title
 {
@@ -41,7 +42,6 @@
     /* removed flex for better alignment */
 }
 
-/* container uses calc to guarantee 3 columns (accounting for two gaps) */
 .services-container {
     width: 100%;
     max-width: 1100px;
@@ -49,7 +49,7 @@
     padding: 1rem 0;
     display: flex;
     flex-wrap: wrap;
-    gap: 24px; /* used in calc below */
+    gap: 1rem;
     justify-content: center;
     align-items: stretch;
 }
@@ -60,39 +60,31 @@
     justify-content: flex-start;
     align-items: flex-start;
     gap: 10px;
-    padding: 22px;
+    padding: 24px;
     border-radius: 12px;
     border: 2px solid #ececec; /* lighter border for contrast */
     background: rgba(30, 30, 30, 0.95);
-    transition: box-shadow 0.28s, transform 0.28s, border 0.28s;
+    transition: box-shadow 0.3s, transform 0.3s, border 0.3s;
     cursor: pointer;
+    height: 100%;
     box-sizing: border-box;
-    /* calculate 3 columns: subtract two gaps (24px each) */
-    flex: 0 1 calc((100% - (24px * 2)) / 3);
-    max-width: 360px;
-    min-width: 220px;
-    min-height: 220px; /* keeps cards visually consistent */
+    flex: 1 1 300px;
+    max-width: 320px;
+    min-width: 260px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.06); /* softer shadow */
-    overflow: hidden;
-    word-wrap: break-word;
-}
-/* ensure text doesn't overflow */
-.services-format h2,
-.services-format p {
-    overflow-wrap: break-word;
 }
 .services-format h3
 {
     font-size: 22px;
     font-weight: 600;
-    margin: 0;
+    margin-bottom: 2px;
     color: #e6a100; /* improved contrast */
 }
 .services-format h2
 {
     font-size: 30px;
     font-weight: 800;
-    margin: 6px 0 8px;
+    margin-bottom: 6px;
     background: linear-gradient(264deg, #DF8908 50%, #B415FF 100%);
     background-clip: text;
     -webkit-background-clip: text;
@@ -104,7 +96,7 @@
     font-size: 18px;
     line-height: 1.6;
     max-width: 260px;
-    margin: 0 0 8px 0;
+    margin-bottom: 8px;
 }
 .services-readmore
 {
@@ -141,35 +133,86 @@
     z-index: 2;
 }
 
+/* Modal Styling */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  max-width: 500px;
+  width: 90%;
+}
+
+.modal-content h2 {
+  margin-bottom: 10px;
+}
+
+.modal-content p {
+  color: #333;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
 /* Responsive adjustments */
 @media (max-width: 900px) {
-    .services-container { gap: 20px; }
-    .services-format {
-        flex: 0 1 calc((100% - 20px) / 2);
-        max-width: none;
-        min-width: 180px;
-        padding: 16px;
-        min-height: 180px;
+    .services-container {
+        max-width: 100%;
+        gap: 1rem;
     }
-    .services-title h1 { font-size: 44px; }
+    .services-format {
+        max-width: 48%;
+        min-width: 160px;
+        padding: 16px;
+    }
+    .services-title h1 {
+        font-size: 44px;
+    }
+    .services-title img {
+        width: 80px;
+    }
 }
 
 @media (max-width: 700px) {
     .services-container {
         flex-direction: column;
-        gap: 12px;
+        gap: 0.7rem;
         padding: 0.5rem 0;
     }
     .services-format {
-        flex: 1 1 100%;
         max-width: 100%;
-        min-width: 0;
-        padding: 12px;
-        min-height: auto;
+        min-width: 100px;
+        padding: 10px;
     }
     .services-title h1 {
-        font-size: 26px;
+        font-size: 24px;
         padding: 0 6px;
     }
-    .services { gap: 24px; margin: 24px 6px; }
+    .services-title img {
+        width: 36px;
+        bottom: -6px;
+        right: -8px;
+    }
+    .services {
+        gap: 24px;
+        margin: 24px 4px;
+    }
 }
