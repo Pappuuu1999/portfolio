@@ -1,6 +1,6 @@
-import ecommerceImage from './projects/ecommerce.jpg';
-import brandKitImage from './projects/brand-kit.jpg';
-import adCampaignImage from './projects/ad-campaign.jpg';
+import ecommerceImage from '../assets/project_1.jpg';
+import brandKitImage from '../assets/project_1.jpg';
+import adCampaignImage from '../assets/project_1.jpg';
 
 const servicesData = [
   {
