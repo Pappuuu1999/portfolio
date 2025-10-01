@@ -1,6 +1,5 @@
-import ecommerceImage from '../assets/project_1.jpg';
-import brandKitImage from '../assets/project_1.jpg';
-import adCampaignImage from '../assets/project_1.jpg';
+// Import images from src/assets
+import project1 from "../assets/project_1.jpg";
 
 const servicesData = [
   {
@@ -18,7 +17,7 @@ const servicesData = [
     projects: [
       {
         name: "E-commerce Website",
-        img: ecommerceImage,
+        img: project1,   // ✅ imported image
         link: "https://example.com/ecommerce"
       }
     ]
@@ -37,7 +36,7 @@ const servicesData = [
     projects: [
       {
         name: "Brand Kit",
-        img: brandKitImage,
+        img: project1,   // ✅ same image (you can import more if needed)
         link: "https://example.com/brand-kit"
       }
     ]
@@ -56,7 +55,7 @@ const servicesData = [
     projects: [
       {
         name: "Ad Campaign",
-        img: adCampaignImage,
+        img: project1,   // ✅ same image
         link: "https://example.com/ad-campaign"
       }
     ]
