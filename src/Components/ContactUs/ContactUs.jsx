@@ -1,83 +1,63 @@
-import React, { useState } from 'react';
-import { useLocation, useNavigate, Link } from 'react-router-dom'; 
-import logo from '../../assets/logo.svg';
-import underline from '../../assets/nav_underline.svg';
+import React from 'react';
+import './ContactUs.css'; // We'll create this new CSS file
+import mail_icon from '../../assets/mail_icon.svg';
+import location_icon from '../../assets/location_icon.svg';
+import call_icon from '../../assets/call_icon.svg';
 
-const Navbar = () => {
-  const [menu, setMenu] = useState("home");
-  const location = useLocation();
-  const navigate = useNavigate();
+const ContactUs = () => {
+  const onSubmit = async (event) => {
+    event.preventDefault();
+    const formData = new FormData(event.target);
 
-  // Check if current path is WorkDetail page
-  const isWorkDetailPage = location.pathname.startsWith("/workdetail");
+    formData.append("access_key", "YOUR_WEB3FORMS_ACCESS_KEY_HERE"); // IMPORTANT: Get your key from web3forms.com
 
-  // ✅ Scroll to contact (with routing support)
-  const handleContactScroll = () => {
-    if (location.pathname === "/") {
-      // Already on homepage → just scroll
-      document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
-      setMenu("contact");
+    const object = Object.fromEntries(formData);
+    const json = JSON.stringify(object);
+
+    const res = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json"
+      },
+      body: json
+    }).then((res) => res.json());
+
+    if (res.success) {
+      alert("Success! Your message has been sent.");
+      event.target.reset(); // Clear the form
     } else {
-      // Not on homepage → navigate first, then scroll
-      navigate("/");
-      setTimeout(() => {
-        document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
-        setMenu("contact");
-      }, 300); // wait a bit for home to render
+      alert("Error sending message. Please try again.");
     }
   };
 
   return (
-    <div className="navbar">
-      {/* ✅ Logo now links to home */}
-      <Link to="/">
-        <img src={logo} alt="Logo" className="nav-logo" />
-      </Link>
-
-      {/* Hide menu if on WorkDetail page */}
-      {!isWorkDetailPage && (
-        <ul className="nav-menu">
-          <li>
-            <a href="#home" onClick={() => setMenu("home")}>
-              Home
-            </a>
-            {menu === "home" && <img src={underline} alt="" />}
-          </li>
-          <li>
-            <a href="#about" onClick={() => setMenu("about")}>
-              About Me
-            </a>
-            {menu === "about" && <img src={underline} alt="" />}
-          </li>
-          <li>
-            <a href="#services" onClick={() => setMenu("services")}>
-              Services
-            </a>
-            {menu === "services" && <img src={underline} alt="" />}
-          </li>
-          <li>
-            <a href="#portfolio" onClick={() => setMenu("portfolio")}>
-              Portfolio
-            </a>
-            {menu === "portfolio" && <img src={underline} alt="" />}
-          </li>
-          <li>
-            <a href="#contact" onClick={(e) => { e.preventDefault(); handleContactScroll(); }}>
-              Contact
-            </a>
-            {menu === "contact" && <img src={underline} alt="" />}
-          </li>
-        </ul>
-      )}
-
-      {/* ✅ Button hidden on WorkDetail page */}
-      {!isWorkDetailPage && (
-        <div className="nav-connect" onClick={handleContactScroll}>
-          Connect With Me
+    <div id="contact" className="contact">
+      <div className="contact-title">
+        <h1>Get in touch</h1>
+      </div>
+      <div className="contact-section">
+        <div className="contact-left">
+          <h1>Let's talk</h1>
+          <p>I'm currently available to take on new projects, so feel free to send me a message about anything that you want me to work on. You can contact me anytime.</p>
+          <div className="contact-details">
+            <div className="contact-detail"><img src={mail_icon} alt="" /> <p>pappukumar1999@gmail.com</p></div>
+            <div className="contact-detail"><img src={call_icon} alt="" /> <p>+91-1234567890</p></div>
+            <div className="contact-detail"><img src={location_icon} alt="" /> <p>Bihar, India</p></div>
+          </div>
         </div>
-      )}
+        <form onSubmit={onSubmit} className="contact-right">
+          <label htmlFor="name">Your Name</label>
+          <input type="text" placeholder="Enter your name" name="name" required />
+          <label htmlFor="email">Your Email</label>
+          <input type="email" placeholder="Enter your email" name="email" required />
+          <label htmlFor="message">Write your message here</label>
+          <textarea name="message" rows="8" placeholder="Enter your message" required></textarea>
+          <button type="submit" className="contact-submit">Submit now</button>
+        </form>
+      </div>
     </div>
   );
 };
 
-export default Navbar;
+export default ContactUs;

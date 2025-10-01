@@ -12,6 +12,7 @@
     background: #161513;
     box-sizing: border-box;
     padding: 10px 100px;
+    text-decoration: none;
 }
 .nav-menu
 {
@@ -47,6 +48,8 @@
     font-size: 22px;
     cursor: pointer;
     transition: 0.5s;
+    color: white;
+    text-decoration: none;
 }
 .nav-connect:hover
 {

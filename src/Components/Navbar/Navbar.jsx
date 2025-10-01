@@ -9,58 +9,54 @@ const Navbar = () => {
   const location = useLocation();
 
   // Check if current path is WorkDetail page
-  const isWorkDetailPage = location.pathname.startsWith("/workdetail");
+  const isWorkDetailPage = location.pathname.startsWith("/workdetail") || location.pathname.startsWith("/work/");
+  
+  // Check if current path is Contact page
+  const isContactPage = location.pathname.startsWith("/contact");
 
   return (
     <div className="navbar">
-      {/* ✅ Logo now links to home */}
+      {/* ✅ Logo always shows */}
       <Link to="/">
         <img src={logo} alt="Logo" className="nav-logo" />
       </Link>
 
-      {/* Hide menu if on WorkDetail page */}
-      {!isWorkDetailPage && (
-        <ul className="nav-menu">
-          <li>
-            <a href="#home" onClick={() => setMenu("home")}>
-              Home
-            </a>
-            {menu === "home" && <img src={underline} alt="" />}
-          </li>
-          <li>
-            <a href="#about" onClick={() => setMenu("about")}>
-              About Me
-            </a>
-            {menu === "about" && <img src={underline} alt="" />}
-          </li>
-          <li>
-            <a href="#services" onClick={() => setMenu("services")}>
-              Services
-            </a>
-            {menu === "services" && <img src={underline} alt="" />}
-          </li>
-          <li>
-            <a href="#portfolio" onClick={() => setMenu("portfolio")}>
-              Portfolio
-            </a>
-            {menu === "portfolio" && <img src={underline} alt="" />}
-          </li>
-          <li>
-            <a href="#contact" onClick={() => setMenu("contact")}>
-              Contact
-            </a>
-            {menu === "contact" && <img src={underline} alt="" />}
-          </li>
-        </ul>
-      )}
+      {/* ✅ Hide menu on WorkDetail OR ContactPage */}
+{!(isWorkDetailPage || isContactPage) && (
+  <ul className="nav-menu">
+    <li>
+      <a href="#home" onClick={() => setMenu("home")}>
+        Home
+      </a>
+      {menu === "home" && <img src={underline} alt="" />}
+    </li>
+    <li>
+      <a href="#about" onClick={() => setMenu("about")}>
+        About Me
+      </a>
+      {menu === "about" && <img src={underline} alt="" />}
+    </li>
+    <li>
+      <a href="#services" onClick={() => setMenu("services")}>
+        Services
+      </a>
+      {menu === "services" && <img src={underline} alt="" />}
+    </li>
+    <li>
+      <a href="#portfolio" onClick={() => setMenu("portfolio")}>
+        Portfolio
+      </a>
+      {menu === "portfolio" && <img src={underline} alt="" />}
+    </li>
+  </ul>
+)}
 
-      {/* ✅ Button hidden on WorkDetail page */}
-      {!isWorkDetailPage && (
-        <div className="nav-connect">Connect With Me</div>
-      )}
+      {/* ✅ Always show button */}
+      <Link to="/contact" className="nav-connect">
+        Connect With Me
+      </Link>
     </div>
   );
 };
 
 export default Navbar;
-

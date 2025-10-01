@@ -1,14 +1,12 @@
 import React from "react";
 import "./WorkDetail.css";
-import workData from "../../assets/workData";
+import workData from "../../assets/workData";  // make sure path is correct
 import arrow_icon from "../../assets/arrow_icon.svg";
 
 const WorkDetail = () => {
-  // Get the 'id' parameter from the URL
   const searchParams = new URLSearchParams(window.location.search);
   const id = searchParams.get("id");
 
-  // Find the work item by id
   const workItem = workData.find((item) => item.id === id);
 
   if (!workItem) {
@@ -24,14 +22,16 @@ const WorkDetail = () => {
     <section className="work-detail" id="work-detail">
       <div className="work-detail-header">
         <h1>{workItem.title}</h1>
+        {/* ✅ use first project image instead of missing 'image' field */}
         <img
-          src={workItem.image}
+          src={workItem.projects[0].img}
           alt={workItem.title}
           className="work-detail-image"
         />
       </div>
       <div className="work-detail-content">
         <p className="work-description">{workItem.description}</p>
+
         <div className="work-features">
           <h3>Key Features</h3>
           <ul>
@@ -40,6 +40,7 @@ const WorkDetail = () => {
             ))}
           </ul>
         </div>
+
         <div className="work-technologies">
           <h3>Technologies Used</h3>
           <div className="tech-tags">
@@ -50,6 +51,7 @@ const WorkDetail = () => {
             ))}
           </div>
         </div>
+
         <div className="work-projects">
           <h3>Related Projects</h3>
           <div className="projects-grid">
@@ -63,8 +65,7 @@ const WorkDetail = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    View Project{" "}
-                    <img src={arrow_icon} alt="Arrow" />
+                    View Project <img src={arrow_icon} alt="Arrow" />
                   </a>
                 )}
               </div>
