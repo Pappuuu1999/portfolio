@@ -1,3 +1,7 @@
+import ecommerceImage from './projects/ecommerce.jpg';
+import brandKitImage from './projects/brand-kit.jpg';
+import adCampaignImage from './projects/ad-campaign.jpg';
+
 const servicesData = [
   {
     id: "01",
@@ -14,7 +18,7 @@ const servicesData = [
     projects: [
       {
         name: "E-commerce Website",
-        img: "/src/assets/projects/ecommerce.jpg",
+        img: ecommerceImage,
         link: "https://example.com/ecommerce"
       }
     ]
@@ -33,7 +37,7 @@ const servicesData = [
     projects: [
       {
         name: "Brand Kit",
-        img: "/src/assets/projects/brand-kit.jpg",
+        img: brandKitImage,
         link: "https://example.com/brand-kit"
       }
     ]
@@ -52,7 +56,7 @@ const servicesData = [
     projects: [
       {
         name: "Ad Campaign",
-        img: "/src/assets/projects/ad-campaign.jpg",
+        img: adCampaignImage,
         link: "https://example.com/ad-campaign"
       }
     ]
