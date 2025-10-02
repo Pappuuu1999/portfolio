@@ -91,3 +91,120 @@
     top:-0.14em;
     left:10px;
   }
+
+
+  /* ---------------------------------- */
+/* ✅ Responsive Design */
+/* ---------------------------------- */
+
+/* Large Laptops (1200px and below) */
+@media (max-width: 1200px) {
+    .hero h1 {
+        font-size: 60px;
+        width: 80%;
+    }
+    .hero p {
+        width: 60%;
+        font-size: 22px;
+        line-height: 36px;
+    }
+    .hero img {
+        height: 350px;
+    }
+    .console-container {
+        font-size: 42px;
+        width: 500px;
+    }
+}
+
+/* Tablets Landscape (992px and below) */
+@media (max-width: 992px) {
+    .hero h1 {
+        font-size: 48px;
+        width: 85%;
+    }
+    .hero p {
+        width: 75%;
+        font-size: 20px;
+        line-height: 34px;
+    }
+    .hero img {
+        height: 300px;
+    }
+    .hero-action {
+        font-size: 20px;
+        gap: 20px;
+    }
+    .hero-connect,
+    .hero-resume {
+        padding: 20px 35px;
+    }
+    .console-container {
+        font-size: 38px;
+        width: 450px;
+    }
+}
+
+/* Tablets Portrait (768px and below) */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 36px;
+        width: 90%;
+    }
+    .hero p {
+        width: 90%;
+        font-size: 18px;
+        line-height: 30px;
+    }
+    .hero img {
+        height: 250px;
+    }
+    .hero-action {
+        flex-direction: column;
+        font-size: 18px;
+        gap: 15px;
+    }
+    .hero-connect,
+    .hero-resume {
+        padding: 18px 30px;
+        width: 100%;
+        text-align: center;
+    }
+    .console-container {
+        font-size: 30px;
+        width: 90%;
+    }
+}
+
+/* Mobile (576px and below) */
+@media (max-width: 576px) {
+    .hero {
+        padding-top: 60px;
+    }
+    .hero h1 {
+        font-size: 28px;
+        width: 95%;
+    }
+    .hero p {
+        width: 95%;
+        font-size: 16px;
+        line-height: 26px;
+    }
+    .hero img {
+        height: 200px;
+        margin-top: 30px;
+    }
+    .hero-action {
+        flex-direction: column;
+        gap: 12px;
+    }
+    .hero-connect,
+    .hero-resume {
+        padding: 15px 25px;
+        font-size: 16px;
+    }
+    .console-container {
+        font-size: 24px;
+        width: 100%;
+    }
+}

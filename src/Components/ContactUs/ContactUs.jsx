@@ -41,9 +41,9 @@ const ContactUs = () => {
           <h1>Let's talk</h1>
           <p>I'm currently available to take on new projects, so feel free to send me a message about anything that you want me to work on. You can contact me anytime.</p>
           <div className="contact-details">
-            <div className="contact-detail"><img src={mail_icon} alt="" /> <p>pappukumar1999@gmail.com</p></div>
-            <div className="contact-detail"><img src={call_icon} alt="" /> <p>+91-1234567890</p></div>
-            <div className="contact-detail"><img src={location_icon} alt="" /> <p>Bihar, India</p></div>
+            <div className="contact-detail"><img src={mail_icon} alt="" /> <p>graphicguy786@gmail.com</p></div>
+            <div className="contact-detail"><img src={call_icon} alt="" /> <p>+92-3025848653</p></div>
+            <div className="contact-detail"><img src={location_icon} alt="" /> <p>Islamabad Pakistan</p></div>
           </div>
         </div>
         <form onSubmit={onSubmit} className="contact-right">

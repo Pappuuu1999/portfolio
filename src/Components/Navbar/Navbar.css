@@ -1,3 +1,4 @@
+/* ---------------- NAVBAR ---------------- */
 .navbar {
     display: flex;
     align-items: center;
@@ -14,34 +15,41 @@
     padding: 10px 100px;
     text-decoration: none;
 }
-.nav-menu
-{
+
+/* Logo */
+.nav-logo {
+    width: 150px;
+}
+
+/* Desktop Menu */
+.nav-menu {
     display: flex;
     align-items: center;
     list-style: none;
     gap: 60px;
     cursor: pointer;
 }
-.nav-menu li
-{
+
+.nav-menu li {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 6px;
 }
-.nav-menu li a
-{
+
+.nav-menu li a {
     text-decoration: none;
     color: inherit;
     display: inline-block;
 }
-.nav-menu li img
-{
+
+.nav-menu li img {
     display: block;
     height: 8px;
 }
-.nav-connect
-{
+
+/* Connect Button */
+.nav-connect {
     padding: 20px 40px;
     border-radius: 50px;
     background: linear-gradient(267deg, #DA7C25 0.36%, #B923E1 102.06%);
@@ -51,8 +59,85 @@
     color: white;
     text-decoration: none;
 }
-.nav-connect:hover
-{
-    transform: scale(1.05);
 
+.nav-connect:hover {
+    transform: scale(1.05);
+}
+
+/* Hide mobile icons by default */
+.nav-mob-open,
+.nav-mob-close {
+    display: none;
+}
+
+
+/* ---------------- RESPONSIVENESS ---------------- */
+
+/* ✅ Tablets (992px and below) */
+@media (max-width: 992px) {
+    .navbar {
+        padding: 10px 60px;
+        text-align: center;
+        
+    }
+
+    .nav-menu {
+        gap: 40px;
+        font-size: 14px;
+    }
+
+    .nav-connect {
+        padding: 15px 30px;
+        font-size: 20px;
+    }
+}
+
+/* ✅ Mobiles (768px and below) */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 10px 30px;
+    }
+
+    .nav-menu {
+        position: fixed;
+        flex-direction: column;
+        align-items: flex-start;
+        top: 0;
+        right: -300px; /* off-screen by default */
+        width: 260px;
+        height: 100vh;
+        background-color: black;
+        gap: 30px;
+        padding: 80px 40px;
+        transition: right 0.4s ease-in-out;
+        z-index: 999;
+    }
+
+    /* Show hamburger & close button */
+    .nav-mob-open {
+        display: block;
+        width: 30px;
+        cursor: pointer;
+        position: relative;
+        z-index: 1001;
+    }
+
+    .nav-mob-close {
+        display: block;
+        position: absolute;
+        top: 30px;
+        right: 30px;
+        width: 30px;
+        cursor: pointer;
+    }
+
+    /* Hide big connect button on small screens */
+    .nav-connect {
+        display: none;
+    }
+}
+
+/* ✅ Optional: when nav is open */
+.nav-menu.active {
+    right: 0;
 }

@@ -7,8 +7,8 @@ import project6_img from '../assets/project_6.svg'
 
 const mywork_data = [
     {
-        w_no:1,
-        w_name:"Web design",
+        id:1,
+        name:"Web design",
         w_img:project1_img,
         link:"https://absolutemobility.com.pk",
         category:"web-design",
@@ -22,8 +22,8 @@ const mywork_data = [
         ]
     },
     {
-        w_no:2,
-        w_name:"Graphics design",
+        id:2,
+        name:"Graphics design",
         w_img:project2_img,
         category:"graphics-design",
         description:"Creative graphic design solutions including logos, branding, marketing materials, and visual content that makes your brand stand out.",
@@ -36,8 +36,8 @@ const mywork_data = [
         ]
     },
     {
-        w_no:3,
-        w_name:"Social media",
+        id:3,
+        name:"Social media",
         w_img:project3_img,
         category:"social-media",
         description:"Comprehensive social media management and content creation to build your online presence and engage with your audience effectively.",
@@ -50,8 +50,8 @@ const mywork_data = [
         ]
     },
     {
-        w_no:4,
-        w_name:"App design",
+        id:4,
+        name:"App design",
         w_img:project4_img,
         category:"app-design",
         description:"User-centered mobile and web app design focusing on intuitive interfaces and seamless user experiences across all devices.",
@@ -64,8 +64,8 @@ const mywork_data = [
         ]
     },
     {
-        w_no:5,
-        w_name:"Digital marketing",
+        id:5,
+        name:"Digital marketing",
         w_img:project5_img,
         category:"digital-marketing",
         description:"Data-driven digital marketing strategies to increase brand visibility, drive traffic, and generate leads for your business.",
@@ -78,8 +78,8 @@ const mywork_data = [
         ]
     },
     {
-        w_no:6,
-        w_name:"Content writing",
+        id:6,
+        name:"Content writing",
         w_img:project6_img,
         category:"content-writing",
         description:"Professional content writing services including blog posts, website copy, and marketing content that engages and converts your audience.",
