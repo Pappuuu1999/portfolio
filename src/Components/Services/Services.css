@@ -53,6 +53,13 @@
     justify-content: center;
     align-items: stretch;
 }
+
+.service-card-border {
+    flex: 1 1 300px;
+    max-width: 320px;
+    min-width: 260px;
+    border-radius: 12px;
+}
 .services-format
 {
     display: flex;
@@ -68,9 +75,6 @@
     cursor: pointer;
     height: 100%;
     box-sizing: border-box;
-    flex: 1 1 300px;
-    max-width: 320px;
-    min-width: 260px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.06); /* softer shadow */
 }
 .services-format h3
@@ -178,9 +182,11 @@
         max-width: 100%;
         gap: 1rem;
     }
-    .services-format {
+    .service-card-border {
         max-width: 48%;
         min-width: 160px;
+    }
+    .services-format {
         padding: 16px;
     }
     .services-title h1 {
@@ -197,9 +203,11 @@
         gap: 0.7rem;
         padding: 0.5rem 0;
     }
-    .services-format {
+    .service-card-border {
         max-width: 100%;
         min-width: 100px;
+    }
+    .services-format {
         padding: 10px;
     }
     .services-title h1 {
