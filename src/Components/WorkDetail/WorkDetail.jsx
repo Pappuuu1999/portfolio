@@ -14,8 +14,9 @@ const WorkDetail = () => {
   useEffect(() => {
     const fetchWorkItem = async () => {
       try {
-        const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || "http://localhost:5000";
-        const res = await fetch(`${API_BASE_URL}/api/work/${id}`);
+        const rawApiUrl = import.meta.env.VITE_API_BASE_URL || "http://localhost:5000";
+        const API_URL = rawApiUrl.replace(/\/+$/, "");
+        const res = await fetch(`${API_URL}/api/work/${id}`);
         if (!res.ok) throw new Error("Failed to fetch work detail");
 
         const data = await res.json();
@@ -50,7 +51,7 @@ const WorkDetail = () => {
   return (
     <section className="work-detail" id="work-detail">
       <div className="work-detail-header">
-        <h1>{workItem.title}</h1>
+        <h1>{workItem.name}</h1>
         {workItem.projects?.[0]?.img && (
           <img
             src={workItem.projects[0].img}
