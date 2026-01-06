@@ -1,21 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import './Services.css';
 import theme_Pattern from '../../assets/theme_pattern.svg';
 import arrow_icon from '../../assets/arrow_icon.svg';
-import { fetchServices } from '../../services/api';
+import { services as servicesData } from '../../data/content';
 import ElectricBorder from '../Electric Border/ElectricBorder';
 
-const Services = () => {
-  const [services, setServices] = useState([]);
-
-
-
-useEffect(() => {
-  fetchServices()
-    .then(data => setServices(data))
-    .catch(err => console.error("Error fetching services:", err));
-}, []);
-
+const Services = ({ services = servicesData }) => {
 
   const handleClick = (service) => {
     // Redirect to the workdetail page with the service ID
@@ -57,7 +47,7 @@ useEffect(() => {
             </ElectricBorder>
           ))
         ) : (
-          <p>Loading services...</p>
+          <p>No services available right now.</p>
         )}
       </div>
     </div>

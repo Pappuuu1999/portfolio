@@ -4,13 +4,13 @@ import About from '../../Components/About/About';
 import Services from '../../Components/Services/Services';
 import MyWork from '../../Components/MyWork/MyWork';
 
-const HomePage = () => {
+const HomePage = ({ projects, services }) => {
   return (
     <>
       <Hero />
       <About />
-      <Services />
-      <MyWork />
+      <Services services={services} />
+      <MyWork works={projects} />
     </>
   );
 };

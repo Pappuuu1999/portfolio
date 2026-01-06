@@ -1,49 +1,22 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
+import { useParams } from "react-router-dom";
 import "./WorkDetail.css";
 import arrow_icon from "../../assets/arrow_icon.svg";
+import { workDetails as workDetailsData } from "../../data/content";
 
-const WorkDetail = () => {
-  const [workItem, setWorkItem] = useState(null);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+const WorkDetail = ({ workDetails = workDetailsData }) => {
+  const { category } = useParams();
 
-  // Get the id from query params
   const searchParams = new URLSearchParams(window.location.search);
-  const id = searchParams.get("id");
+  const queryId = searchParams.get("id");
+  const lookupId = queryId || category;
+  const workItem = workDetails.find((item) => item.id === lookupId);
 
-  useEffect(() => {
-    const fetchWorkItem = async () => {
-      try {
-        const rawApiUrl = import.meta.env.VITE_API_BASE_URL || "http://localhost:5000";
-        const API_URL = rawApiUrl.replace(/\/+$/, "");
-        const res = await fetch(`${API_URL}/api/work/${id}`);
-        if (!res.ok) throw new Error("Failed to fetch work detail");
-
-        const data = await res.json();
-        setWorkItem(data);
-      } catch (err) {
-        setError(err.message);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    if (id) fetchWorkItem();
-  }, [id]);
-
-  if (loading) {
-    return (
-      <section className="work-detail" id="work-detail">
-        <h2>Loading...</h2>
-      </section>
-    );
-  }
-
-  if (error || !workItem) {
+  if (!lookupId || !workItem) {
     return (
       <section className="work-detail" id="work-detail">
         <h2>Work Not Found</h2>
-        <p>{error || "The requested work item does not exist."}</p>
+        <p>The requested work item does not exist.</p>
       </section>
     );
   }

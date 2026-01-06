@@ -1,15 +1,8 @@
-import React, { useEffect, useState } from "react";
-import { fetchProjects } from "../../services/api"; // ✅ import API function
+import React from "react";
+import { projects as projectsData } from "../../data/content";
 import "./MyWork.css";
 
-const MyWork = () => {
-  const [works, setWorks] = useState([]);
-
-  useEffect(() => {
-    fetchProjects()
-      .then((data) => setWorks(data))
-      .catch((err) => console.error("Error fetching projects:", err));
-  }, []);
+const MyWork = ({ works = projectsData }) => {
 
   return (
     <div className="mywork">
